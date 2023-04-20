@@ -1,67 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block title %}
+<title>Sign up</title>
 
-    {% block title %}
-        <title>Registro SIC</title>
-    {% endblock title %}
+{% endblock title %} {% block body %} {{error}}
 
-    {% load static %}
+<form action="/signup/" method="post">
+  {% csrf_token %} {{form.as_p}}
 
-    {% block css %}
-        <link rel="stylesheet" href="{% static 'css/sing-up.css' %}">
-    {% endblock css %}
+  <button style="border-radius: 1rem">Sign up</button>
+</form>
 
 
-    {% block body %}
-
-        {{error}}
-        <div class="card" style="padding-top: 25px;">
-            <h1>Registro sistema SIC</h1>
-            <p>Rellene los campos solicitados para registrarse</p>
-    
-    
-            <form action="/signup/" method=" post">
-                {% csrf_token %}
-                <div class="form_group__d">
-    
-                    <div class="form_group__d--">
-                        <label for="Name">Nombre</label>
-                        <input type="text" name="Name" id="Name" placeholder="Introdusca el nombre">
-    
-                    </div>
-                    <div>
-    
-                        <label for="LastName">apellido</label>
-                        <input type="text" name="LastName" id="LastName" placeholder="Introdusca el apellido">
-                    </div>
-                </div>
-    
-                <label for="Email">Correo</label>
-                <input type="email" name="Email" id="Email" class="form-grup__p"
-                    placeholder="Introduzca la dirección de correo electrónico" required>
-    
-                <label for="Password">Contraseña</label>
-                <input type="password" name="Password" id="Password" class="form-grup__p" placeholder="Contraseña" required>
-    
-                <div class="form_group__d espace">
-                    <div class="form_group__d--">
-                        <label for="Dni">Cedula</label>
-                        <input type="text" name="Dni" id="Dni" placeholder="V-XXXXXX" required>
-                    </div>
-                    <div>
-                        <label for="Phone">Telefono</label>
-                        <input type="text" name="Phone" id="Phone" placeholder="Telefono" required>
-                    </div>
-                </div>
-    
-    
-                <label>
-                    <input type="checkbox" name="Terms" id="Terms" required>
-                    Estoy de acuerdo con los términos y condiciones
-                </label>
-                <input type="submit" class="register" value="Registrar Cuenta">
-            </form>
-    
-        </div>
-
-    {% endblock body %}
-        
+{% endblock body %}

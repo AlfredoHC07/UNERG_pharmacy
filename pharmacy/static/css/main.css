@@ -1,7 +1,60 @@
-/* body {
-    height: 100vh;
-} */
+/* Footer */
+.img-logo {
+    position: absolute;
+    width: 460px;
+    height: 61px;
+    left: 163px;
+    top: 90%;
+}
 
-.sp-50 {
-    margin-top: 50px;
+.img-logo-d {
+    position: absolute;
+    width: 153px;
+    height: 71px;
+    left: 80%;
+    top: 90%;
+}
+
+.sp-f{
+    margin-right: 50%;
+}
+
+/* Validation email */
+
+.p-gris {
+    text-align: justify;
+    font-size: 18px;
+    color: #8692A6;
+}
+
+.input-check {
+    width: 57px;
+    height: 65px;
+    border: 2px solid #8692A6;
+    border-radius: 6px;
+}
+
+.button-tm {
+    width: 171px;
+    height: 68px;
+}
+
+.sp-m{
+    margin-right: 20%;
+}
+
+.sp-d {
+    margin-top: 10%;
+}
+
+.div-check {
+    padding-top: 100px; 
+    width: 520px;
+    height: 663px;
+}
+
+.card-check {
+    background: #FFFFFF;
+    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
 }
