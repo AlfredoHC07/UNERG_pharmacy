@@ -1,0 +1,6 @@
+body {
+    height: 70vh; /* Altura del cuerpo igual a la altura de la ventana */
+    display: flex; /* Establece el elemento padre como un contenedor flex */
+    justify-content: center; /* Centra horizontalmente el elemento hijo */
+    align-items: center; /* Centra verticalmente el elemento hijo */
+}

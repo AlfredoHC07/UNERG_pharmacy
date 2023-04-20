@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+*{
+   
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    
+}
+
+/* .navbar{
+    display: flex;
+    justify-content: flex-end;
+    color: #696F79;
+
+
+} */
+
+
+.back{
+    display: flex;
+    justify-content: left;
+    max-width: 800px;
+
+
+}
+.back > a{
+    text-decoration: none;
+    color: #2f4056;
+}
+
+.back > a:hover{
+    
+    color: #0a58c5;
+    
+}
+
+.login{
+    color: #1565D8;
+    text-decoration: none;
+}
+
+.card{
+    width: 441px;
+    margin: 50px auto;
+    border-radius: 12px;
+   
+}
+
+.card > h1{
+    text-align: center;
+    margin-top: 40px;
+}
+
+h1 + p{
+    text-align: center;
+    color: #8692A6;
+    padding-top: 9px;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+form{
+ display: flex;
+ flex-direction: column;
+ flex-wrap: wrap;
+ gap: 10px;
+ 
+}
+
+.form_group__d{
+    display: flex;
+    flex-direction: row;
+    border-radius: 6px;
+    justify-content: space-between;
+}
+
+.form_group__d--{
+    margin-right: 60px;
+}
+
+
+#Name, #LastName, #Dni , #Phone{
+    padding: 13px;
+    border-radius: 6px;
+    border: 1px solid #8692A6;
+
+}
+#Name:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+#LastName:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+#Dni:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+#Phone:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+#Email:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+#Password:focus{
+    outline: unset;
+    border: 2px solid #1566d8c7;
+    box-shadow: 1px 1px 2px 1px #1566d839;
+}
+
+.form-grup__p{
+   
+    padding: 14px;
+    border-radius: 6px;
+    border: 1px solid #8692A6;
+
+}
+
+input[type=checkbox]{
+    display: inline-block;
+    align-items: center;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    color: red;
+}
+
+.espace{
+    margin-bottom: 10px;
+}
+
+.register{
+   background: #1565D8;
+   border: none;
+   padding: 20px;
+   border-radius: 6px;
+   color: #fff;
+   font-size: 15px;
+}
+
+
+footer{
+    display: flex;
+    max-width: 739px;
+    min-width: 497px ;
+    justify-content: space-between;
+    align-items: center;
+    margin:auto;
+}
+
+.padd-top {
+    padding-top: 25px;
+}
