@@ -83,7 +83,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
+  margin-top: 1em;
   margin-bottom: 0.5rem;
 }
 
@@ -236,7 +236,7 @@ label {
 }
 
 button {
-  border-radius: 0;
+  border-radius: 3rem;
 }
 
 button:focus {
@@ -16406,10 +16406,10 @@ be a descendant of the grid when it is being dragged.
 }
 
 .login-content .login-box .login-head {
-  margin-top: 0;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 0.1px solid #ddd;
   text-align: center;
 }
 
@@ -16437,17 +16437,19 @@ be a descendant of the grid when it is being dragged.
 }
 
 .login-content .login-box .login-form, .login-content .login-box .forget-form {
+  
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 50px;
+  padding: 55px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: all 0.5s ease-in-out;
   -o-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  
 }
 
 .login-content .login-box .forget-form {
@@ -16478,6 +16480,7 @@ be a descendant of the grid when it is being dragged.
   }
   .login-content .login-box .login-form, .login-content .login-box .forget-form {
     width: 100%;
+    
   }
 }
 

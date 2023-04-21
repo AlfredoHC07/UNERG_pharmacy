@@ -2,28 +2,45 @@
 {% load static %}
 
 {% block title %}
-  <title>Sign up</title>
+  <title>Registrarse</title>
 {% endblock title %}
 
 {% block css %}
-  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock css %}
 
 {% block body %} 
   {{error}}
-
-  <form action="/signup/" method="post">
-    {% csrf_token %}
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" required><br>
-
-    <label for="password1">Contraseña:</label>
-    <input type="password" id="password1" name="password1" required><br>
-
-    <label for="password2">Repetir contraseña:</label>
-    <input type="password" id="password2" name="password2" required><br>
-
-    <button type="submit">Registrarse</button>
-  </form>
-
+<section class="material-half-bg">
+  <div class="cover"></div>
+</section>
+<section class="login-content">
+  <div class="logo">
+    <h1><i>Registrarse</i></h1>
+  </div>
+  <div class="login-box">
+    <form class="login-form" action="/signup/" method="post">
+      {% csrf_token %}
+      <h4 class="login-head">Registrarse</h4>
+      <div class="form-group">
+        <label class="control-label" for="username">Usuario</label>
+        <input class="form-control " type="text" name="username" id="username" placeholder="Usuario" required />
+      </div>
+      <div class="form-group">
+        <label class="control-label" for="password1">Contraseña</label>
+        <input class="form-control " type="password" name="password1" id="password1" placeholder="Contraseña" required />
+      </div>
+      <div class="form-group">
+        <label  class="control-label" for="password2">Repetir contraseña</label>
+        <input class="form-control " type="password" id="password2" name="password2" required placeholder="Repetir Contraseña">
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+      </div>
+      <div class="form-group btn-container">
+        <button class="btn btn-primary btn-block boton"type="submit"><i class="fa fa-sign-in fa-lg fa-fw"></i>Registrarse</button>
+      </div>
+      <br>
+    </form>
+ 
 {% endblock body %}
