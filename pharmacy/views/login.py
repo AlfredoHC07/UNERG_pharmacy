@@ -25,31 +25,28 @@ def signup(request):
             'autenticate': autenticate
         })
     else:
-        try:
-            user = CustomUser.objects.create_user(
-                username=request.POST['username'],
-                first_name=request.POST['Name'],
-                last_name=request.POST['LastName'],
-                email=request.POST['Email'], 
-                password=request.POST['Password'],
-                rif=request.POST['Dni'],
-                phone=request.POST['Phone'],
-            )
-            user.save()
-            login(request, user)
-            return redirect('dashboard')
+        if request.POST['password1'] == request.POST['password2']:
+            try:
+                user = CustomUser.objects.create_user(
+                    username=request.POST['username'],
+                    password=request.POST['password1'],
+                )
+                user.save()
+                login(request, user)
+                return redirect('dashboard')
 
-        except IntegrityError:
+            except IntegrityError:
+                return render(request, 'signup.html', {
+                    'form': UserCreationForm,
+                    'error': 'El usuario ya existe',
+                    'autenticate': autenticate
+                })
+        else:
             return render(request, 'signup.html', {
                 'form': UserCreationForm,
-                'error': 'El usuario ya existe',
+                'error': 'Las claves no coinciden',
                 'autenticate': autenticate
             })
-        return render(request, 'signup.html', {
-            'form': UserCreationForm,
-            'error': 'Las claves no coinciden',
-            'autenticate': autenticate
-        })
 
 def signin(request):
     autenticate = True
