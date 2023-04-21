@@ -25,7 +25,6 @@ def signup(request):
             'autenticate': autenticate
         })
     else:
-        code = random.randint(100000, 999999)
         try:
             user = CustomUser.objects.create_user(
                 username=request.POST['username'],
@@ -35,7 +34,6 @@ def signup(request):
                 password=request.POST['Password'],
                 rif=request.POST['Dni'],
                 phone=request.POST['Phone'],
-                verification_code = code,
             )
             user.save()
             login(request, user)
