@@ -1,13 +1,29 @@
-{% extends 'base.html' %} {% block title %}
-<title>Sign up</title>
+{% extends 'base.html' %} 
+{% load static %}
 
-{% endblock title %} {% block body %} {{error}}
+{% block title %}
+  <title>Sign up</title>
+{% endblock title %}
 
-<form action="/signup/" method="post">
-  {% csrf_token %} {{form.as_p}}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+{% endblock css %}
 
-  <button style="border-radius: 1rem">Sign up</button>
-</form>
+{% block body %} 
+  {{error}}
 
+  <form action="/signup/" method="post">
+    {% csrf_token %}
+    <label for="username">Nombre de usuario:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password1">Contraseña:</label>
+    <input type="password" id="password1" name="password1" required><br>
+
+    <label for="password2">Repetir contraseña:</label>
+    <input type="password" id="password2" name="password2" required><br>
+
+    <button type="submit">Registrarse</button>
+  </form>
 
 {% endblock body %}
