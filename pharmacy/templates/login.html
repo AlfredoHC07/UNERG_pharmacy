@@ -6,7 +6,7 @@
 
 
 {% block css %}
-  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 {% endblock css %}
   
 
@@ -76,17 +76,19 @@
     </form>
   </div>
 </section>
-<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-<script src="{% static 'js/popper.min.js' %}"></script>
-<script src="{% static 'js/bootstrap.min.js' %}"></script>
-<script src="{% static 'js/main.js' %}"></script>
-<!-- The javascript plugin to display page loading on top-->
-<script src="{% static 'js/plugins/pace.min.js' %}"></script>
-<script type="text/javascript">
-// Login Page Flipbox control
-$('.login-content [data-toggle="flip"]').click(function() {
-$('.login-box').toggleClass('flipped');
-return false;
-});
-</script>
 {% endblock body %}
+{% block js %}
+        
+        <script src="{% static 'js/main.js' %}"></script>
+        <!-- The javascript plugin to display page loading on top-->
+        <script src="{% static 'js/plugins/pace.min.js' %}"></script>
+        <!-- Page specific javascripts-->
+        <script type="text/javascript" src="{% static 'js/plugins/chart.js' %}"></script>
+        <script type="text/javascript">
+        // Login Page Flipbox control
+        $('.login-content [data-toggle="flip"]').click(function() {
+        $('.login-box').toggleClass('flipped');
+        return false;
+        });
+        </script>
+{% endblock js %}
