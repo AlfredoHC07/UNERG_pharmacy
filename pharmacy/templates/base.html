@@ -17,12 +17,13 @@
   </head>
   <body class="app sidebar-mini">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #009688;">
-      <header class="app-header"><a class="app-header__logo" href="#"><i>Mi Farmacia</i></a>
         <!-- Sidebar toggle button-->
         {% if user.is_authenticated %}
+        <header class="app-header"><a class="app-header__logo" href="#"><i>Mi Farmacia</i></a>
         <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
         {% endif %}       
         <!-- Navbar Right Menu-->
+        
         <ul class="app-nav">
           <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
