@@ -162,13 +162,13 @@ sup {
 }
 
 a {
-  color: #e7565b;
+  color: #3e9774;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #8f1717;
+  color: #0c7061;
   text-decoration: underline;
 }
 
@@ -2046,7 +2046,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #FFF;
-  border-color: #f25154;
+  border-color: #267d59;
   outline: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -2253,7 +2253,7 @@ textarea.form-control {
 }
 
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
-  border-color: #a72844;
+  border-color: #0e8a4e;
   -webkit-box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.25);
           box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.25);
 }
@@ -2380,9 +2380,9 @@ textarea.form-control {
 }
 
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
-  border-color: #dc3545;
-  -webkit-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.25);
-          box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.25);
+  border-color:#0eb790;
+  -webkit-box-shadow: 0 0 0 0 rgba(34, 152, 107, 0.513);
+          box-shadow: 0 0 0 0 rgba(34, 152, 107, 0.513);
 }
 
 .was-validated .form-control:invalid ~ .invalid-feedback,
@@ -2397,15 +2397,15 @@ textarea.form-control {
 }
 
 .was-validated .custom-select:invalid, .custom-select.is-invalid {
-  border-color: #dc3545;
+  border-color: #0eb790;
   padding-right: calc((1em + 0.75rem) * 3 / 4 + 1.75rem);
   background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3e%3cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3e%3ccircle r='.5'/%3e%3ccircle cx='3' r='.5'/%3e%3ccircle cy='3' r='.5'/%3e%3ccircle cx='3' cy='3' r='.5'/%3e%3c/svg%3E") #FFF no-repeat center right 1.75rem/calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 
 .was-validated .custom-select:invalid:focus, .custom-select.is-invalid:focus {
-  border-color: #dc3545;
-  -webkit-box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.25);
-          box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.25);
+  border-color: #0eb790;
+  -webkit-box-shadow: 0 0 0 0 rgba(73, 211, 147, 0.25);
+          box-shadow: 0 0 0 0 rgba(80, 229, 147, 0.25);
 }
 
 .was-validated .custom-select:invalid ~ .invalid-feedback,
@@ -2619,14 +2619,14 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #FFF;
-  background-color: #f44a50d6;
-  border-color: #f44a50d6 ;
+  background-color: #009688;
+  border-color:  #009688 ;
 }
 
 .btn-primary:hover {
   color: #FFF;
-  background-color: #cd0707d2;
-  border-color: #a20404da;
+  background-color: #00564e;
+  border-color: #00564e;
 }
 
 .btn-primary:focus, .btn-primary.focus {
@@ -2643,7 +2643,7 @@ fieldset:disabled a.btn {
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: #FFF;
-  background-color: #d00a10;
+  background-color: #00564e;
   border-color: #00564e;
 }
 
@@ -15883,7 +15883,7 @@ be a descendant of the grid when it is being dragged.
 
 .material-half-bg {
   height: 100vh;
-  background-image: url(../img/login2.jpg)
+  background-image: url(../img/prueba.jpg)
   ;
   position: fixed;
   top: 0;
@@ -15894,7 +15894,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .material-half-bg .cover {
-  background-color: var(--red) ;
+  background-color: #009688 ;
   height: 50vh;
 }
 
