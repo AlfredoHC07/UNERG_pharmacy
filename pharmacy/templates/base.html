@@ -29,8 +29,8 @@
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
               {% if user.is_authenticated %}
                 <li><a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer"></i>Dashboard</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Profile</a></li>
-                <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out fa-lg"></i> Logout</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+                <li><a class="dropdown-item" href="/logout"><i class="fa fa-sign-out fa-lg"></i> Salir</a></li>
               {% else %}
                 <li><a class="dropdown-item" href="/signup"><i class="fa fa-sign-out fa-lg"></i>Registrate</a></li>
               {% endif %}       
@@ -43,7 +43,7 @@
         <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
         <aside class="app-sidebar">
           <ul class="app-menu">
-            <li><a class="app-menu__item active" href="#"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
+            <li><a class="app-menu__item active" href="#"><i class="app-menu__icon fa fa-home"></i><span class="app-menu__label">Inicio</span></a></li>
             <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">UI Elements</span><i class="treeview-indicator fa fa-angle-right"></i></a>
               <ul class="treeview-menu">
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Bootstrap Elements</a></li>
@@ -52,7 +52,7 @@
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Widgets</a></li>
               </ul>
             </li>
-            <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Docs</span></a></li>
+            <li><a class="app-menu__item" href="#"><i class="app-menu__icon fa fa-folder-open fa"></i><span class="app-menu__label">Medicina</span></a></li>
           </ul>
         </aside>
         <ul class="navbar-nav ms-auto d-flex"></ul>
