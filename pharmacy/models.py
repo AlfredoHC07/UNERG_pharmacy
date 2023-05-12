@@ -20,19 +20,23 @@ class User(models.Model):
 
 class Producto(models.Model):
     nombre_producto = models.CharField(max_length=255)
-    precio = models.FloatField(decimal_places=2)
+    precio_compra = models.FloatField(decimal_places=2)
+    precio_venta = models.FloatField(decimal_places=2)
     disponibilidad = models.BooleanField(default=False)
+    descripcion = models.TextField()
+
 
 class Almacen(models.Model):
-    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)#dudoso
-    cantidad_producto = models.IntegerField()
-    valor_total = models.FloatField(decimal_places=2)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     fecha_entrada = models.DateTimeField(auto_now_add=True)
+    cantidad_producto = models.IntegerField()
+    cantidad_producto_vendidos = models.IntegerField()
 
 
 class TablaVentas(models.Model):
-    producto = models.CharField(max_length=255)#dudoso
-    cantidad_vendidos = models.IntegerField()
-    valor_total = models.FloatField(decimal_places=2)
+    producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
+    cantidad_producto_actual = models.IntegerField()
+    precio_total_compra = models.FloatField(decimal_places=2)
+    precio_total_venta = models.FloatField(decimal_places=2)
     ganancias = models.FloatField(decimal_places=2)
     reportes = models.TextField()
