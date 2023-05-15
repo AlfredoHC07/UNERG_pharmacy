@@ -2,13 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
-# class CustomUser(AbstractUser):
-#     rif = models.CharField(max_length=20, blank=True)
-#     phone = models.CharField(max_length=20, blank=True)
-#     checked = models.BooleanField(default=False)
-#     verification_code = models.CharField(max_length=6, blank=True)
-
-class User(models.Model):
+class CustomUser(AbstractUser):
     nombres = models.CharField(max_length=200)
     apellidos = models.CharField(max_length=200)
     telefono = models.CharField(max_length=11)
@@ -26,13 +20,11 @@ class Producto(models.Model):
     descripcion = models.TextField()
     imagen = models.ImageField(upload_to='imagenes/', blank=True, null=True)
 
-
 class Almacen(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     fecha_entrada = models.DateTimeField(auto_now_add=True)
     cantidad_producto = models.IntegerField()
     cantidad_producto_vendidos = models.IntegerField()
-
 
 class TablaVentas(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
