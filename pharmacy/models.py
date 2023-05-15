@@ -24,6 +24,7 @@ class Producto(models.Model):
     precio_venta = models.FloatField(decimal_places=2)
     disponibilidad = models.BooleanField(default=False)
     descripcion = models.TextField()
+    imagen = models.ImageField(upload_to='imagenes/', blank=True, null=True)
 
 
 class Almacen(models.Model):
