@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from pharmacy.models import CustomUser
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import Group
 from django.db import IntegrityError
 
 def signout(request):
@@ -22,6 +23,9 @@ def signup(request):
                 user = CustomUser.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
                 user.save()
                 user = authenticate(username= request.POST['username'], password = request.POST['password1'])
+                
+                supervisor_group = Group.objects.get(name="supervisor")
+                user.groups.add(supervisor_group)
                 
                 if user is not None:
                     login(request, user)

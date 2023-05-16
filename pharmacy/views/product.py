@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from pharmacy.models import Producto
 from django.shortcuts import get_object_or_404
 from django.db import IntegrityError
