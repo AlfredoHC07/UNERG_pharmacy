@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Productos</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Tabla de productos</h5>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Imagen</th>
+                <th>Nombre del producto</th>
+                <th>Precio</th>
+                <th>Disponibilidad</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for producto in productos %}
+                    <tr>
+                        <td><img src="{{ producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail"></td>
+                        <td>{{ producto.nombre_producto }}</td>
+                        <td>{{ producto.precio_venta }}</td>
+                        <td>{{ producto.disponibilidad }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>
+                            <a href="#" class="btn btn-primary">Ver</a>
+                            <a href="#" class="btn btn-secondary">Editar</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock body %}
+    
