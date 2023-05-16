@@ -3,14 +3,11 @@ from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
 class CustomUser(AbstractUser):
-    nombres = models.CharField(max_length=200)
-    apellidos = models.CharField(max_length=200)
-    telefono = models.CharField(max_length=11)
-    direccion = models.CharField(max_length=350)
-    correo = models.CharField(max_length=150) 
-    contraseña = models.CharField(max_length=100) 
-    is_admin = models.BooleanField(default=False)
-    is_almacen = models.BooleanField(default=False)
+    nombres = models.CharField(max_length=200,blank=False, null=False)
+    apellidos = models.CharField(max_length=200,blank=False,  null=False)
+    telefono = models.CharField(max_length=11,blank=False,  null=False)
+    direccion = models.CharField(max_length=350,blank=False, null=False)
+    correo = models.CharField(max_length=150,blank=False, null=False)
 
 class Producto(models.Model):
     nombre_producto = models.CharField(max_length=255)
