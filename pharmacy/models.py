@@ -21,7 +21,7 @@ class Almacen(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)
     fecha_entrada = models.DateTimeField(auto_now_add=True)
     cantidad_producto = models.IntegerField()
-    cantidad_producto_vendidos = models.IntegerField()
+    cantidad_producto_vendidos = models.IntegerField(default=0)
 
 class TablaVentas(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)

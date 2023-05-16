@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Editar de Producto de Almacen</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container mt-5">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Editar de Producto de Almacen</h5>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="producto">Producto</label>
+              <select class="form-select" id="producto" name="producto" required>
+                {% for producto in productos %}
+                  <option value="{{ producto.id }}" {% if producto.id == registro.producto.id %}selected{% endif %}>{{ producto.nombre_producto }}</option>
+                {% endfor %}
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="cantidad_producto">Cantidad del producto</label>
+              <input type="number" class="form-control" id="cantidad_producto" name="cantidad_producto" value="{{ registro.cantidad_producto }}" required>
+            </div>
+            <div class="mb-3">
+              <label for="cantidad_producto_vendidos">Cantidad del producto Vendido</label>
+              <input type="number" class="form-control" id="cantidad_producto_vendidos" name="cantidad_producto_vendidos" value="{{ registro.cantidad_producto_vendidos }}" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
+          </form>
+      </div>
+    </div>
+</div>
+{% endblock body %}
+    
