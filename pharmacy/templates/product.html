@@ -4,7 +4,7 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container">
+<div class="container mt-5">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Tabla de productos</h5>
@@ -12,9 +12,11 @@
           <table class="table">
             <thead>
               <tr>
+                <th>Codigo</th>
                 <th>Imagen</th>
                 <th>Nombre del producto</th>
-                <th>Precio</th>
+                <th>Precio de Venta</th>
+                <th>Precio de Compra</th>
                 <th>Disponibilidad</th>
                 <th>Descripción</th>
                 <th>Acciones</th>
@@ -23,19 +25,25 @@
             <tbody>
                 {% for producto in productos %}
                     <tr>
-                        <td><img src="{{ producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail"></td>
+                        <td>{{ producto.id }}</td>
+                        <td><img src="{{ producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail" style="width: 100px; height: 80px;"></td>
                         <td>{{ producto.nombre_producto }}</td>
                         <td>{{ producto.precio_venta }}</td>
-                        <td>{{ producto.disponibilidad }}</td>
+                        <td>{{ producto.precio_compra }}</td>
+                        {% if producto.disponibilidad %}
+                            <td>Disponible</td>
+                        {% else %}
+                            <td>Sin Disponibilidad</td>
+                        {% endif %}
                         <td>{{ producto.descripcion }}</td>
                         <td>
-                            <a href="#" class="btn btn-primary">Ver</a>
-                            <a href="#" class="btn btn-secondary">Editar</a>
+                            <a href="{% url 'edit_product' producto.id %}" class="btn btn-primary">Editar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
           </table>
+          <a href="{% url 'create_product' %}"><button type="button" class="btn btn-primary">Registrar Producto</button></a>
         </div>
       </div>
     </div>

@@ -20,9 +20,7 @@ def signup(request):
         if request.POST['password1'] == request.POST['password2']:
             try:
                 user = CustomUser.objects.create_user(username=request.POST['username'],password=request.POST['password1'])
-                print("hola xd")
                 user.save()
-                print(user)
                 user = authenticate(username= request.POST['username'], password = request.POST['password1'])
                 
                 if user is not None:
