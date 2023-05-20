@@ -4,29 +4,42 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Tabla de productos</h5>
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
+      <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="fas fa-syringe"></i> Productos</h1>
+          <p>Tabla de Producto e Registro</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb side">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Tabla</li>
+          <li class="breadcrumb-item active"><a href="#">Productos</a></li>
+        </ul>
+      </div>
+ <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+             <h3 class="tile-title"><i>Productos Registrados</i></h3>
+            <div class="tile-body">
+              <div class="table-responsive">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                    <tr>
                 <th>Codigo</th>
                 <th>Imagen</th>
                 <th>Nombre del producto</th>
                 <th>Precio de Venta</th>
                 <th>Precio de Compra</th>
                 <th>Disponibilidad</th>
-                <th>Descripción</th>
+                <th> Descripción</th>
                 <th>Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
+                    </tr>
+                  </thead>
+                  <tbody>
                 {% for producto in productos %}
                     <tr>
                         <td>{{ producto.id }}</td>
-                        <td><img src="{{ producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail" style="width: 100px; height: 80px;"></td>
+                        <td><img src="{{ producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail" style="width:100px; height: auto;"></td>
                         <td>{{ producto.nombre_producto }}</td>
                         <td>{{ producto.precio_venta }}</td>
                         <td>{{ producto.precio_compra }}</td>
@@ -37,16 +50,16 @@
                         {% endif %}
                         <td>{{ producto.descripcion }}</td>
                         <td>
-                            <a href="{% url 'edit_product' producto.id %}" class="btn btn-primary">Editar</a>
+                            <a href="{% url 'edit_product' producto.id %}" class="btn btn-primary" style="border-radius: 4rem;" >Editar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
           </table>
-          <a href="{% url 'create_product' %}"><button type="button" class="btn btn-primary">Registrar Producto</button></a>
+          <a href="{% url 'create_product' %}"><button type="button" class="btn btn-primary" style="border-radius: 4rem;">Registrar Producto</button></a>
         </div>
       </div>
     </div>
 </div>
+</main>
 {% endblock body %}
-    

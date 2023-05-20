@@ -4,16 +4,28 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Productos en Almacen</h5>
-        <div class="table-responsive">
-          <table class="table">
+ <main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="fas fa-boxes"></i>Almacén</h1>
+          <p>Tabla de Producto en el Almacén</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb side">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item">Tabla</li>
+          <li class="breadcrumb-item active"><a href="#">Productos</a></li>
+        </ul>
+      </div>
+ <div class="clearfix"></div>
+        <div class="col-md-12">
+          <div class="tile">
+            <h3 class="tile-title">Productos en el Almacén</h3>
+            <div class="table-responsive">
+              <table class="table">
             <thead>
               <tr>
                 <th>Codigo</th>
-                <th>Imagen</th>
+                <!-- <th>Imagen</th> -->
                 <th>Nombre del producto</th>
                 <th>Precio de Venta</th>
                 <th>En Disponibilidad</th>
@@ -25,21 +37,22 @@
                 {% for registro in registros %}
                     <tr>
                         <td>{{ registro.id }}</td>
-                        <td><img src="{{ registro.producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail" style="width: 100px; height: 80px;"></td>
+                        <!-- <td><img src="{{ registro.producto.imagen.url }}" alt="Imagen del producto" class="img-thumbnail" style="width: 100px; height: 80px;"></td> -->
                         <td>{{ registro.producto.nombre_producto }}</td>
                         <td>{{ registro.producto.precio_venta }}</td>
                         <td>{{ registro.cantidad_producto }}</td>
                         <td>{{ registro.fecha_entrada }}</td>
                         <td>
-                            <a href="{% url 'edit_warehouse' registro.id %}" class="btn btn-primary">Editar</a>
+                            <a href="{% url 'edit_warehouse' registro.id %}" class="btn btn-primary" style="border-radius: 4rem;">Editar</a>
                         </td>
                     </tr>
                 {% endfor %}
             </tbody>
           </table>
-          <a href="{% url 'create_warehouse' %}"><button type="button" class="btn btn-primary">Agregar Producto al Almacen</button></a>
+          <a href="{% url 'create_warehouse' %}"><button type="button" class="btn btn-primary" style="border-radius: 4rem;">Agregar Producto al Almacen</button></a>
         </div>
       </div>
     </div>
 </div>
+</main>
 {% endblock body %}

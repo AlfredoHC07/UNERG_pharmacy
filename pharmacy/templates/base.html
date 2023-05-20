@@ -31,7 +31,7 @@
           <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
               {% if user.is_authenticated %}
-                <li><a class="dropdown-item" href="/dashboard"><i class="fa fa-tachometer"></i>Dashboard</a></li>
+                <li><a class="dropdown-item" href="/dashboard"><i class="fa fa-home"></i>Inicio</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
                 <li><a class="dropdown-item" href="/logout"><i class="fas fa-door-open"></i> Salir</a></li>
               {% else %}
@@ -48,7 +48,7 @@
           <ul class="app-menu"><i class="fa-solid fa-hospital-user"></i>
             <li><a class="app-menu__item active" href="{% url 'dashboard' %}"><i class="app-menu__icon fas fa-home"></i><span class="app-menu__label">Inicio</span></a></li>
             <li><a class="app-menu__item" href="{% url 'product' %}"><i class="app-menu__icon fas fa-syringe"></i><span class="app-menu__label">Productos</span></a></li>
-            <li><a class="app-menu__item" href="{% url 'warehouse' %}"><i class="app-menu__icon fas fa-syringe"></i><span class="app-menu__label">Almacen</span></a></li>
+            <li><a class="app-menu__item" href="{% url 'warehouse' %}"><i class="app-menu__icon fas fa-boxes"></i><span class="app-menu__label">Almacen</span></a></li>
           </ul>
         </aside>
         <ul class="navbar-nav ms-auto d-flex"></ul>

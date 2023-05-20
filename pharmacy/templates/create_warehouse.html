@@ -4,15 +4,34 @@
 {% endblock title %}
 
 {% block body %}
-<div class="container mt-5">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Registro de Almacen</h5>
-        <form method="post" enctype="multipart/form-data">
+<main class="app-content">
+      <div class="app-title">
+        <div>
+          <h1><i class="fa fa-edit"></i> Registro de Almacén</h1>
+          <p>Registar los Productos Nuevos</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+          <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+          <li class="breadcrumb-item"> Productos</li>
+          <li class="breadcrumb-item"><a href="#">Registar producto</a></li>
+        </ul>
+      </div>
+      
+  <div class="row">
+        <div class="col-md-10">
+          <div class="tile">
+            <h3 class="tile-title"><i>Registro de Almacén</i></h3>
+            <div class="tile-body">
+              <form  method="post" enctype="multipart/form-data">
             {% csrf_token %}
-            <div class="mb-3">
-              <label for="producto">Producto</label>
-              <select class="form-select" id="producto" name="producto" required>
+            <div class="clearfix"></div>
+        <div class="col-md-12">
+          <div class="tile">
+            <div class="table-responsive">
+              <table class="table">
+            <div class="mb-4">
+              <label for="producto">Productos</label>
+              <select class="form-control" id="producto" name="producto" required>
                 {% for producto in productos %}
                   <option value="{{ producto.id }}">{{ producto.nombre_producto }}</option>
                 {% endfor %}
@@ -27,5 +46,7 @@
       </div>
     </div>
 </div>
+</table>
+</main>
 {% endblock body %}
     
