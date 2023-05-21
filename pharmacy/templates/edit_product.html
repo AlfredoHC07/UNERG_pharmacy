@@ -38,12 +38,12 @@
                   <label for="disponibilidad" class="control-label">Disponibilidad</label>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="radio" required name="disponibilidad"  value="1" {% if producto.disponibilidad %}selected{% endif %}>Disponible
+                      <input class="form-check-input" type="radio" required name="disponibilidad"  value="1" {% if producto.disponibilidad %}checked{% endif %}>Disponible
                     </label>
                   </div>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="radio" name="disponibilidad"required  value="0" {% if not producto.disponibilidad %}selected{% endif %}>Sin Disponibilidad
+                      <input class="form-check-input" type="radio" name="disponibilidad"required  value="0" {% if not producto.disponibilidad %}checked{% endif %}>Sin Disponibilidad
                     </label>
                   </div>
                 </div>
