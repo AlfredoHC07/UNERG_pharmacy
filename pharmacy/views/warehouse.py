@@ -32,14 +32,14 @@ def edit_warehouse(request,pk):
     almacen = Almacen.objects.get(id=pk)
 
     if request.method == 'POST':
-        producto_id = int(request.POST.get('producto'))
+        #producto_id = int(request.POST.get('producto'))
         cantidad_producto = request.POST.get('cantidad_producto')
-        almacen.producto = Producto.objects.get(id=producto_id)
+        #almacen.producto = Producto.objects.get(id=producto_id)
         almacen.cantidad_producto = cantidad_producto
         almacen.cantidad_producto_vendidos = request.POST.get('cantidad_producto_vendidos')
         almacen.save()
-
+        return redirect('warehouse')
     elif request.method == 'GET':
-        context['productos'] = Producto.objects.filter(disponibilidad=True)
+        #context['productos'] = Producto.objects.filter(disponibilidad=True)
         context['registro'] = almacen
         return render(request, 'edit_warehouse.html', context)
