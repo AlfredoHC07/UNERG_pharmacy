@@ -12,7 +12,7 @@ def signup(request):
     context = {}
         
     if request.user.is_authenticated:
-            return redirect("dashboard")
+        return redirect("dashboard")
 
     if request.method == 'GET':
         return render(request, 'signup.html')
@@ -43,6 +43,9 @@ def signup(request):
 
 
 def signin(request):
+    if request.user.is_authenticated:
+        return redirect("dashboard")
+
     if request.method == 'GET':
         return render(request, 'login.html')
     else:
