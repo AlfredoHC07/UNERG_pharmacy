@@ -14870,7 +14870,7 @@ be a descendant of the grid when it is being dragged.
   -webkit-transition: margin-left 0.3s ease;
   -o-transition: margin-left 0.3s ease;
   transition: margin-left 0.3s ease;
-  background-image: url(../img/unerg.png);
+  background-image: url(../img/logo.png);
    background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 64rem;
@@ -15472,7 +15472,7 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: #f8f9fac7;
+  background-color: #f8f9faf7;
   margin: -30px -30px 30px;
   padding: 20px 30px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -15536,7 +15536,7 @@ be a descendant of the grid when it is being dragged.
 
 .tile {
   position: relative;
-  background: #f8f9faf0;
+  background: #f8f9faf5;
   border-radius: 10px;
   padding: 20px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -16077,7 +16077,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.primary.coloured-icon {
-  background-color: #f8f9fafa;
+  background-color: #f8f9faf5;
   color: #2a2a2a;
 }
 
@@ -16091,7 +16091,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.info.coloured-icon {
-  background-color: #f8f9fac7;
+  background-color: #f8f9faf5;
   color: #2a2a2a;
 }
 
@@ -16105,7 +16105,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.warning.coloured-icon {
-  background-color: #f8f9fac7;
+  background-color: #f8f9faf5;
   color: #2a2a2a;
 }
 
@@ -16119,7 +16119,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .widget-small.danger.coloured-icon {
-  background-color: #f8f9fac7;
+  background-color:#f8f9faf5;
   color: #2a2a2a;
 }
 
