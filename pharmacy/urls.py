@@ -15,5 +15,6 @@ urlpatterns = [
     path('warehouse/', login_required(warehouse.warehouse) , name='warehouse'),
     path('create_warehouse/', login_required(warehouse.create_warehouse) , name='create_warehouse'),
     path('edit_warehouse/<int:pk>', login_required(warehouse.edit_warehouse) , name='edit_warehouse'),
+    path('generate_pdf/', dashboard.create_pdf, name='generate_pdf'),
 
 ]
