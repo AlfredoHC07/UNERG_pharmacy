@@ -45,7 +45,7 @@
       </tr>
       {% for i in almacen %}
       <tr>
-        <td style="text-align: center">123</td>
+        <td style="text-align: center">{{ i.id }}</td>
         <td style="text-align: center">{{ i.producto.nombre_producto }}</td>
         <td style="text-align: center">{{ i.cantidad_producto }}</td>
         <td style="text-align: center">{{ i.fecha_entrada }}</td>
