@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from .views import index,login,dashboard,product,warehouse
 
 urlpatterns = [
-    path('', index.index, name='index'),
-    path('home/', index.home, name='home'),
+    #path('', index.index, name='index'),
+    path('', index.home, name='home'),
     path('signup/', login.signup, name='signup'),
     path('dashboard/',login_required(dashboard.dashboard), name='dashboard'),
     path('logout/', login_required(login.signout), name='logout'),

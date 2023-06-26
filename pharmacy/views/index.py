@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 def index(request):
-    return redirect('home')
+    return redirect('login')
     
 def home(request):
-    return redirect('login')
+    return render(request, 'home.html')
