@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from django.utils import timezone
 
 # Create your models here.
 class CustomUser(AbstractUser):
@@ -22,6 +23,12 @@ class Almacen(models.Model):
     fecha_entrada = models.DateTimeField(auto_now_add=True)
     cantidad_producto = models.IntegerField()
     cantidad_producto_vendidos = models.IntegerField(default=0)
+    month = models.IntegerField(blank=True,null=True)
+    
+    def save(self, *args, **kwargs):
+        if not self.id:  # Verificar si es un registro nuevo
+            self.month = timezone.now().month
+        super().save(*args, **kwargs)
 
 class TablaVentas(models.Model):
     producto = models.ForeignKey(Producto, on_delete=models.CASCADE)

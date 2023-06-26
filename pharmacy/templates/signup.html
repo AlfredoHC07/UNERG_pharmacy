@@ -7,7 +7,8 @@
   type="text/css"
   href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
 />
-{% endblock css %} {% block body %} {{error}}
+{% endblock css %} 
+{% block body %}
 <section class="material-half-bg">
   <div class="cover"></div>
 </section>
@@ -68,7 +69,12 @@
       </div>
       <br />
     </form>
+    {% if error %}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          {{error}}
+        </div>  
+      {% endif %}
 
-    {% endblock body %}
-  </div>
-</section>
+    </div>
+  </section>
+{% endblock body %}
