@@ -46,47 +46,15 @@ def dashboard(request):
 def create_pdf(request):
 
     almacen = Almacen.objects.all()
-    print("➡ almacen :", almacen)
-    print("➡ almacen :", almacen)
-    print("➡ almacen :", almacen)
-    print("➡ almacen :", almacen)
-
-    # almacen_cantidad_producto = almacen.cantidad_producto
-    # almacen_producto = almacen.producto
-    # almacen_fecha_entrada = almacen.fecha_entrada
-
-    # datos["almacen_cantidad_producto"] = almacen_cantidad_producto
-    # datos["almacen_producto"] = almacen_producto
-    # datos["almacen_fecha_entrada"] = almacen_fecha_entrada
-
-
+    
     html = loader.render_to_string('pdf.html', {'almacen':almacen})
-    output= pdfkit.from_string(html, options={"enable-local-file-access": ""})
+    wkhtmltopdf_path = r'C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe'
+    config = pdfkit.configuration(wkhtmltopdf=wkhtmltopdf_path)
+    output= pdfkit.from_string(html, False, configuration=config)
     response = HttpResponse(content_type="application/pdf")
     response.write(output)
 
-    filename = "sample_pdf.pdf"
+    filename = "Reporte_de_Almacen.pdf"
 
     response['Content-Disposition'] = 'attachment; filename="' + filename + '"'
     return response
-
-# def get_image_file_as_base64_data():
-#     with open("/home/analista/LENGUAJE DE PROGRAMACIÓN/UNERG_pharmacy/pharmacy/static/img/unerg.png", 'rb') as image_file:
-#         return base64.b64encode(image_file.read())
-
-# def tabla_datos(request,pk):
-
-#     context = {}
-
-#     almacen = Almacen.objects.get(id=pk)
-
-#     almacen_cantidad_producto = almacen.cantidad_producto
-#     almacen_producto = almacen.producto
-#     almacen_fecha_entrada = almacen.fecha_entrada
-
-#     context["almacen_cantidad_producto"] = almacen_cantidad_producto
-#     context["almacen_producto"] = almacen_producto
-#     context["almacen_fecha_entrada"] = almacen_fecha_entrada
-
-#     return render(request, 'pdf.html', context=context)
-

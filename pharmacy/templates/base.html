@@ -23,8 +23,8 @@
   <body class="app sidebar-mini">
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #009688;">
         <!-- Sidebar toggle button-->
-        {% if user.is_authenticated %}
         <header class="app-header"><a class="app-header__logo" href="#"><i>Mi Farmacia</i></a>
+        {% if user.is_authenticated %}
         <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
         {% endif %}       
         <!-- Navbar Right Menu-->
@@ -33,10 +33,12 @@
           <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i></a>
             <ul class="dropdown-menu settings-menu dropdown-menu-right">
               {% if user.is_authenticated %}
-                <li><a class="dropdown-item" href="/dashboard"><i class="fa fa-home"></i>Inicio</a></li>
-                <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Perfil</a></li>
+                <li><a class="dropdown-item" href="/dashboard"><i class="fa fa-home"></i>Dashboard</a></li>
+                <!-- <li><a class="dropdown-item" href="#"><i class="fa fa-user fa-lg"></i> Perfil</a></li> -->
                 <li><a class="dropdown-item" href="/logout"><i class="fas fa-door-open"></i> Salir</a></li>
               {% else %}
+                <li><a class="dropdown-item" href="/"><i class="fa fa-house fa-lg"></i>Inicio</a></li>
+                <li><a class="dropdown-item" href="/login"><i class="fa fa-user fa-lg"></i>Inicar Sesión</a></li>
                 <li><a class="dropdown-item" href="/signup"><i class="fa fa-sign-out fa-lg"></i>Registrate</a></li>
               {% endif %}       
             </ul>
